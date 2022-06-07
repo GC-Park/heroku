@@ -1,5 +1,5 @@
 {
-  "name": "new-fold",
+  "name": "blog",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "engines": {
-    "node": "16.15.0"
+    "node": "16.15.1"
   },
   "dependencies": {
     "bcrypt": "^5.0.1",
