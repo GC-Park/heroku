@@ -44,9 +44,6 @@ app.use('*', (req, res, next)=> {
     next()
 })
 
-// app.get('/',(req,res)=>{
-//     res.render('index');
-// })
 app.get('/', homeController)
 app.get('/post/:id', getPostController)
 app.post('/posts/store',authMiddleware, storePostController)
@@ -56,32 +53,6 @@ app.get('/auth/login', redirectIfAuthenticateMiddleware, loginController)
 app.post('/users/login', redirectIfAuthenticateMiddleware, loginUserController)
 app.get('/posts/new', authMiddleware, newPostController)
 app.get('/auth/logout', logoutController)
-// app.post('/posts/store', authMiddleware, storePostController)
-
-// app.get('/about',(req,res)=>{
-//     res.render('about');
-// })
-// app.get('/contact',(req,res)=>{
-//     res.render('contact');
-// })
-// app.get('/post',(req,res)=>{
-//     res.render('post');
-// })
-// app.get('/post/:id',async (req,res)=>{
-//     const blogpost = await BlogPost.findById(req.params.id)
-//     res.render('post', {
-//         blogpost
-//     })
-// })
-
-// app.post('/posts/store', (req, res)=> {
-//     let image = req.files.image;
-//     image.mv(path.resolve(__dirname, 'public/assets/img' ,image.name), async(error)=>{
-//             await BlogPost.create({...req.body, image:'/assets/img/'+ image.name})
-//             res.redirect('/')
-//         }
-//     )
-// })
 
 
 const PORT = process.env.PORT
